@@ -12,7 +12,7 @@ export default function PageRow({
   return (
     <div
       onClick={onChange}
-      className="flex items-center justify-between bg-white rounded-md py-2 pl-5 pr-3 cursor-pointer"
+      className="group flex items-center justify-between bg-white rounded-md py-2 pl-5 pr-3 cursor-pointer"
     >
       <span className="text-gray-700 select-none">{title}</span>
       <Checkbox checked={selected} onChange={onChange} />
