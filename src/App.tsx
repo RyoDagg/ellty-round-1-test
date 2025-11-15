@@ -40,7 +40,7 @@ function App() {
         {/* Select All */}
         <PageRow title="All pages" selected={allSelected} onToggle={toggleAll} />
 
-        <div className="separator"></div>
+        <div className="separator" />
 
         {/* Page list */}
         <div className="pages-list">
@@ -54,7 +54,7 @@ function App() {
           ))}
         </div>
 
-        <div className="separator"></div>
+        <div className="separator" />
 
         <div className="button-wrapper">
           <Button>Done</Button>

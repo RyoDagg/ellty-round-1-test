@@ -39,8 +39,8 @@ body {
   font-size: 0.875rem;
 }
 
-.button-container {
-  padding: 0.625rem 1rem;
+.button-wrapper {
+  padding-top: 0.625rem;
 }
 
 .button:hover {
