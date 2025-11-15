@@ -19,6 +19,7 @@ const initialPages: Page[] = [
   { id: 5, title: 'Page 5', selected: false },
   { id: 6, title: 'Page 6', selected: false },
 ];
+
 function App() {
   const [pages, setPages] = useState<Page[]>(initialPages);
 
