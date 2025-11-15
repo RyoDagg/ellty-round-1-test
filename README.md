@@ -1,73 +1,111 @@
-# React + TypeScript + Vite
+# ☑️ Selectable Pages Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, clean, and fully interactive React component allowing users to select individual pages or toggle all pages at once. Built with clarity, maintainability, and minimalism in mind.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## React Compiler
+**Live Preview:** _[[ellty-round-1-test.vercel.app](https://ellty-round-1-test.vercel.app/)]_
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**GitHub Repository:** _[[This Repository](https://github.com/RyoDagg/ellty-round-1-test/)]_
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📌 Overview
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+This project implements a UI component where users can:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Select or deselect individual items
+- Select or deselect all items at once
+- Press a CTA: _Done_
+- Clearly visualize selection state through clean styling and animation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+The component is fully interactive and designed with readable, maintainable code using React + TypeScript + TailwindCSS.
+
+---
+
+## 🎯 Features
+
+### ✓ Select All
+
+A global toggle updates the selection state of all pages.
+
+### ✓ Individual Selection
+
+Each page row includes a custom checkbox built using an icon and accessible HTML.
+
+### ✓ Custom UI Components
+
+- `Button` component
+- `PageRow` component
+- `Checkbox` component
+
+### ✓ Clean Separation of Concerns
+
+Logic is centralized in the `App` component, while visual and interactive responsibilities live in small isolated components.
+
+---
+
+## Tech Stack
+
+- **React**
+- **TypeScript**
+- **Vite**
+- **React Icons**
+
+---
+
+## Project Structure
+
+```
+src/
+  components/
+    Button.tsx
+    Checkbox.tsx
+    PageRow.tsx
+  App.tsx
+  App.css
+  main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+## 🧠 How It Works
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+- Each page entry stores its `selected` boolean.
+- `togglePage(id)` updates only the clicked page.
+- `toggleAll()` checks whether all pages are selected and flips them accordingly.
+- UI instantly reflects updated state through clear component props.
+
+---
+
+Yes — you should mention it, because `pnpm` isn’t as universally known as `npm` or `yarn`. A small note at the start clarifying the package manager will help anyone who tries to run your project. For example:
+
+---
+
+## Installation & Setup
+
+> This project uses **pnpm** as its package manager. If you don’t have it installed, you can get it with `npm install -g pnpm`.
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/RyoDagg/ellty-round-1-test.git
+
+# 2. Navigate into the project directory
+cd ellty-round-1-test
+
+# 3. Install dependencies
+pnpm install
+
+# 4. Start the development server
+pnpm dev
 ```
+
+After running `pnpm dev`, open your browser at [http://localhost:5173](http://localhost:5173) to view the project.
+
+---
+
+## Notes
+
+This project was completed as part of the **Ellty React Component Test**, focusing on interactivity, clarity, and clean implementation.
